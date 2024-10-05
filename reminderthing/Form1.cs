@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace reminderthing
 {
@@ -7,18 +8,19 @@ namespace reminderthing
     //  dodaæ mo¿liwoœæ dodania daty kiedy ma sie pojawiæ / warunków
     //  cos tam jeszcze...
 
-        
 
-    public partial class Reminderer : Form  
+
+    public partial class Reminderer : Form
     {
-        string path = "C:/MF/MF_RD/MF_RD_Reminders";
+        static string path = @"C:/MF/MF_RD/MF_RD_Reminders";
         string reminderthing = "";
+        string[] pathdir = Directory.GetFiles(path, "*.txt");
         //string[] enumeratedfilepath = null;
         //C:\MF\MF_RD\MF_RD_Reminders
 
         public static void NumberingFile(string filepath)
         {
-            
+
             //string[] enumeratedfilepath = null;
             //enumeratedfilepath = Directory.EnumerateFiles(filepath);
 
@@ -38,14 +40,14 @@ namespace reminderthing
             var highestfile = numberList.OrderByDescending(x => x).FirstOrDefault();
             var filenumber = (highestfile + 1);
             string filename = (filepath + "/" + filenumber.ToString() + ".txt");
-            
+
             FileStream fs = File.Create(filename);
             fs.Close();
             //File.Create(filename);
         }
 
 
-    public Reminderer()
+        public Reminderer()
         {
             InitializeComponent();
         }
@@ -72,6 +74,24 @@ namespace reminderthing
                 Directory.CreateDirectory(path);
                 return;
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (string name in pathdir)
+            {
+                listView2.Items.Add(name);
+            }
+        }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

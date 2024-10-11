@@ -4,10 +4,12 @@ using System.Windows.Forms;
 namespace reminderthing
 {
     // TO DO
-    // Randomizer numerów przypomnieñ
+    // Randomizer numerów przypomnieñ ()
+    // okno dodawania przypomnieñ
     //  dodaæ mo¿liwoœæ dodania daty kiedy ma sie pojawiæ / warunków
+    // mo¿liwoœæ nazywania przypomnieñ
     //  cos tam jeszcze...
-
+     
 
 
     public partial class Reminderer : Form
@@ -41,6 +43,7 @@ namespace reminderthing
             var filenumber = (highestfile + 1);
             string filename = (filepath + "/" + filenumber.ToString() + ".txt");
 
+
             FileStream fs = File.Create(filename);
             fs.Close();
             //File.Create(filename);
@@ -64,7 +67,13 @@ namespace reminderthing
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Directory.Exists(path))
+
+            Form2 f2 = new Form2();
+            f2.Show();
+            
+            
+            
+            /*if (Directory.Exists(path))
             {
                 NumberingFile(path);
 
@@ -73,7 +82,7 @@ namespace reminderthing
             {
                 Directory.CreateDirectory(path);
                 return;
-            }
+            }*/
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,7 +94,7 @@ namespace reminderthing
         {
             foreach (string name in pathdir)
             {
-                listView2.Items.Add(name);
+                listView2.Items.Add(Path.GetFileNameWithoutExtension(name));
             }
         }
 

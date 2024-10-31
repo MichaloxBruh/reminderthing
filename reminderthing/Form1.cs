@@ -17,11 +17,27 @@ namespace reminderthing
     {
         static string path = @"C:/MF/MF_RD/MF_RD_Reminders";
         string ppppath = "@\"C:/MF/MF_RD/MF_RD_Reminders\"";
+        
         string reminderthing = "";
-        string[] pathdir = Directory.GetFiles(path, "*.txt");
+        //string[] pathdir = Directory.GetFiles(path, "*.txt");
         //string[] enumeratedfilepath = null;
         //C:\MF\MF_RD\MF_RD_Reminders
 
+
+        public void DoesDirExist(string path2)
+        {
+            if (Directory.Exists(path))
+            {
+
+            }
+            else
+            {
+                DirectoryInfo di = Directory.CreateDirectory(path);
+                return;
+            }
+
+        }
+        
         public static void NumberingFile(string filepath)
         {
 
@@ -55,6 +71,7 @@ namespace reminderthing
         public Reminderer()
         {
             InitializeComponent();
+            DoesDirExist(path);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -94,6 +111,7 @@ namespace reminderthing
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string[] pathdir = Directory.GetFiles(path, "*.txt");
             foreach (string name in pathdir)
             {
                 listView2.Items.Add(Path.GetFileNameWithoutExtension(name));

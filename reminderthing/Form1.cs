@@ -1,3 +1,4 @@
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -9,12 +10,13 @@ namespace reminderthing
     //  dodaæ mo¿liwoœæ dodania daty kiedy ma sie pojawiæ / warunków
     // mo¿liwoœæ nazywania przypomnieñ
     //  cos tam jeszcze...
-     
+    // make "@"C:/MF/MF_RD/MF_RD_Reminders" create itself if it doesn't exist on a computer  
 
 
     public partial class Reminderer : Form
     {
         static string path = @"C:/MF/MF_RD/MF_RD_Reminders";
+        string ppppath = "@\"C:/MF/MF_RD/MF_RD_Reminders\"";
         string reminderthing = "";
         string[] pathdir = Directory.GetFiles(path, "*.txt");
         //string[] enumeratedfilepath = null;

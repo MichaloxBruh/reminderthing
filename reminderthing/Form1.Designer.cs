@@ -28,35 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            aa = new Label();
-            richTextBox1 = new RichTextBox();
             button1 = new Button();
             button2 = new Button();
             listView2 = new ListView();
             SuspendLayout();
             // 
-            // aa
-            // 
-            aa.AutoSize = true;
-            aa.Font = new Font("Segoe UI", 28F);
-            aa.Location = new Point(22, 9);
-            aa.Name = "aa";
-            aa.Size = new Size(293, 51);
-            aa.TabIndex = 0;
-            aa.Text = "Add a reminder!";
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(12, 279);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(240, 45);
-            richTextBox1.TabIndex = 1;
-            richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
-            // 
             // button1
             // 
-            button1.Location = new Point(383, 9);
+            button1.Location = new Point(3, 10);
             button1.Name = "button1";
             button1.Size = new Size(131, 23);
             button1.TabIndex = 2;
@@ -66,7 +45,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(594, 9);
+            button2.Location = new Point(214, 10);
             button2.Name = "button2";
             button2.Size = new Size(65, 23);
             button2.TabIndex = 4;
@@ -76,7 +55,7 @@
             // 
             // listView2
             // 
-            listView2.Location = new Point(383, 38);
+            listView2.Location = new Point(3, 39);
             listView2.Name = "listView2";
             listView2.Size = new Size(276, 286);
             listView2.TabIndex = 5;
@@ -87,23 +66,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(671, 327);
+            ClientSize = new Size(284, 327);
             Controls.Add(listView2);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(richTextBox1);
-            Controls.Add(aa);
             Name = "Reminderer";
             Text = "Reminderer";
             Load += Form1_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label aa;
-        private RichTextBox richTextBox1;
         private Button button1;
         private Button button2;
         private ListView listView2;

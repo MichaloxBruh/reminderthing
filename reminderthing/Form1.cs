@@ -1,22 +1,22 @@
-using System.IO;
+ï»¿using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace reminderthing
 {
     // TO DO
-    // Randomizer numerów przypomnieñ ()
-    // okno dodawania przypomnieñ
-    //  dodaæ mo¿liwoœæ dodania daty kiedy ma sie pojawiæ / warunków
-    // mo¿liwoœæ nazywania przypomnieñ
+    // Randomizer numerÃ³w przypomnieÃ± ()
+    // okno dodawania przypomnieÃ±
+    //  dodaÃ¦ moÂ¿liwoÅ“Ã¦ dodania daty kiedy ma sie pojawiÃ¦ / warunkÃ³w (Å¼eby przeczytaÅ‚)
+    // moÂ¿liwoÅ“Ã¦ nazywania przypomnieÃ± 
     //  cos tam jeszcze...
-    // make "@"C:/MF/MF_RD/MF_RD_Reminders" create itself if it doesn't exist on a computer  
+    
 
 
     public partial class Reminderer : Form
     {
         static string path = @"C:/MF/MF_RD/MF_RD_Reminders";
-        string ppppath = "@\"C:/MF/MF_RD/MF_RD_Reminders\"";
+        string ppppath = @"C:/MF/MF_RD/MF_RD_Reminders";
         
         string reminderthing = "";
         //string[] pathdir = Directory.GetFiles(path, "*.txt");
@@ -81,7 +81,7 @@ namespace reminderthing
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            reminderthing = richTextBox1.Text;
+            //reminderthing = richTextBox1.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -111,6 +111,7 @@ namespace reminderthing
 
         private void button2_Click(object sender, EventArgs e)
         {
+            listView2.Clear();
             string[] pathdir = Directory.GetFiles(path, "*.txt");
             foreach (string name in pathdir)
             {

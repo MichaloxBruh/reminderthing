@@ -38,12 +38,14 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            label6 = new Label();
             SuspendLayout();
             // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Top;
-            button2.Location = new Point(168, 189);
+            button2.Location = new Point(174, 215);
             button2.Name = "button2";
             button2.Size = new Size(101, 27);
             button2.TabIndex = 1;
@@ -74,7 +76,7 @@
             // richTextBox4
             // 
             richTextBox4.Anchor = AnchorStyles.Top;
-            richTextBox4.Location = new Point(174, 154);
+            richTextBox4.Location = new Point(174, 183);
             richTextBox4.Name = "richTextBox4";
             richTextBox4.Size = new Size(218, 29);
             richTextBox4.TabIndex = 5;
@@ -141,17 +143,42 @@
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label5.Location = new Point(53, 162);
+            label5.Location = new Point(56, 188);
             label5.Name = "label5";
             label5.Size = new Size(115, 21);
             label5.TabIndex = 11;
             label5.Text = "Additional Info:";
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Anchor = AnchorStyles.Top;
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Location = new Point(174, 154);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(88, 23);
+            dateTimePicker2.TabIndex = 12;
+            dateTimePicker2.Value = new DateTime(2024, 11, 1, 0, 31, 0, 0);
+            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label6.Location = new Point(117, 156);
+            label6.Name = "label6";
+            label6.Size = new Size(47, 21);
+            label6.TabIndex = 13;
+            label6.Text = "Time:";
+            label6.Click += label6_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(404, 228);
+            ClientSize = new Size(404, 254);
+            Controls.Add(label6);
+            Controls.Add(dateTimePicker2);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -180,5 +207,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private DateTimePicker dateTimePicker2;
+        private Label label6;
     }
 }

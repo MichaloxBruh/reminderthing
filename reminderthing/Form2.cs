@@ -20,15 +20,16 @@ namespace reminderthing
         string remindername = "";
         string reminderdesc = "";
         string reminderdate = "";
-        string reminderaddinfo = "";
+        string remindertime = "";
+        //string reminderaddinfo = "";
 
         public Form2()
         {
             InitializeComponent();
         }
-        
+
         //there is a 100% better solution to this but i'm too lazy
-        public static void NumberingFile(string filepath, string remindername, string reminderdesc, string reminderdate, string reminderaddinfo)
+        public static void NumberingFile(string filepath, string remindername, string reminderdesc, string reminderdate, string remindertime)
         {
 
             //string[] enumeratedfilepath = null;
@@ -60,16 +61,17 @@ namespace reminderthing
                 sw.WriteLine(remindername);
                 sw.WriteLine(reminderdesc);
                 sw.WriteLine(reminderdate);
-                sw.WriteLine(reminderaddinfo);
+                sw.WriteLine(remindertime);
+               //sw.WriteLine(reminderaddinfo); // this is useless with reminderdesc being a thing
             }
             //File.Create(filename);
         }
 
         private void button2_Click(object sender, EventArgs e) // create button
         {
-            if (remindername != "" && reminderaddinfo != "" && reminderdate != "" && reminderdesc != "")
+            if (remindername != "" && reminderdate != "" && remindertime != "" && reminderdesc != "")
             {
-                NumberingFile(path, remindername, reminderdesc,reminderdate,reminderaddinfo);
+                NumberingFile(path, remindername, reminderdesc, reminderdate,remindertime);
 
 
             }
@@ -97,7 +99,17 @@ namespace reminderthing
 
         private void richTextBox4_TextChanged(object sender, EventArgs e) //add info
         {
-            reminderaddinfo = (richTextBox4.Text);
+            //reminderaddinfo = (richTextBox4.Text);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            remindertime = (dateTimePicker2.Text);
         }
     }
 }
